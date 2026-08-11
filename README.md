@@ -49,6 +49,7 @@ A partir de ahí:
 | [`textos/aviso-legal.md`](textos/aviso-legal.md) | `/aviso-legal` |
 | [`textos/politica-de-uso-razonable.md`](textos/politica-de-uso-razonable.md) | `/uso-razonable` |
 | [`textos/subencargados.md`](textos/subencargados.md) | `/subencargados` |
+| [`textos/licitaciones.md`](textos/licitaciones.md) | `/licitaciones` |
 
 Los cuatro últimos son **Documentos Vinculados** de los Términos y Condiciones: forman parte del contrato aunque se publiquen aparte.
 
