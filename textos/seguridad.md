@@ -57,5 +57,3 @@ Los proveedores que tratan datos personales por cuenta de Gooveris y sus garant�
 ¿Buscas el resto de condiciones? Consulta los [Términos y Condiciones Generales de Helice.app](/terminos-de-uso).
 
 ---
-
-## Notas de cierre (no publicables)
