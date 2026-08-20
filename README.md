@@ -35,8 +35,6 @@ A partir de ahí:
 - **Cada licencia contratada** queda asociada a la versión que se firmó.
 - **El cliente** puede consultar en cualquier momento la suya, mediante un enlace permanente a esa etiqueta o un PDF generado a partir de ella.
 
-⚠️ **No se modifica una versión ya etiquetada.** Cualquier cambio, por pequeño que sea, es una versión nueva. Es lo que hace que la remisión "la versión vigente en la fecha X" tenga valor probatorio.
-
 ---
 
 ## Qué contiene
@@ -53,22 +51,6 @@ A partir de ahí:
 | [`textos/licitaciones.md`](textos/licitaciones.md) | `/licitaciones` |
 
 La política de cookies, el aviso legal, la política de uso razonable, la lista de subencargados y las medidas de seguridad son **Documentos Vinculados** de los Términos y Condiciones: forman parte del contrato aunque se publiquen aparte. El documento de licitaciones es informativo y no forma parte del contrato.
-
----
-
-## Reglas de este repositorio
-
-**Aquí solo entra texto publicable.** Nunca notas de trabajo, comentarios para el abogado, dudas pendientes ni registros de decisiones. Todo eso vive en el repositorio privado del proyecto (`helice-nueva-web`, carpeta `legal/`), que es donde se redacta.
-
-El flujo es: **se redacta en privado → se revisa → se publica aquí ya limpio → se etiqueta**.
-
----
-
-## Estado actual
-
-⚠️ **Versión de trabajo, pendiente de revisión por abogado.** Todavía no hay ninguna etiqueta publicada: la primera se creará cuando el abogado valide el paquete, justo antes del lanzamiento de la web.
-
-Al publicarlos por primera vez hay que **avisar a todos los clientes** de la actualización de los Términos y Condiciones: cambian condiciones sustanciales.
 
 ---
 
