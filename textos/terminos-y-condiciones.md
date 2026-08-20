@@ -1,6 +1,5 @@
 # TÉRMINOS Y CONDICIONES GENERALES DE HELICE.APP
-
-**Versión: [n.º] · Fecha de publicación: [fecha]** · [Descargar en PDF]
+**Versión 1.0 · 19 de agosto de 2026**
 
 ## Índice
 

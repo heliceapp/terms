@@ -1,6 +1,5 @@
 # AVISO LEGAL DE HELICE.APP
-
-**Versión: [n.º] · Fecha de publicación: [fecha]**
+**Versión 1.0 · 19 de agosto de 2026**
 
 ## 1. Identificación del prestador (art. 10 LSSI-CE)
 
