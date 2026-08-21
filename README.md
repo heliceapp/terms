@@ -66,6 +66,15 @@ deje los documentos sellados como `**Versión v3.0**` con un solo commit. Si se 
 por separado, el workflow se ejecuta dos veces y deja dos commits: uno con el hash y otro
 con la etiqueta.
 
+También se puede etiquetar un commit ya subido —incluido uno de sellado— y subir después
+solo la etiqueta con `git push origin v3.0`: ese push dispara el workflow por su cuenta y
+vuelve a sellar los documentos, ahora con `v3.0`.
+
+> **Cuidado con `[skip ci]`.** GitHub salta este workflow en cuanto encuentra esa marca en
+> el mensaje del commit, y también al etiquetar un commit que la lleve. No debe usarse en
+> los mensajes de commit de este repositorio, ni siquiera mencionada de pasada: desactiva
+> el sellado sin previo aviso y sin dejar rastro en la pestaña *Actions*.
+
 Solo se etiqueta cuando **cambia el fondo** de un documento, no en cada corrección: si el
 número de versión cambiase en cada push dejaría de identificar nada, y la cláusula 3.4 se
 apoya en que sea estable. Entre etiqueta y etiqueta, los documentos muestran
