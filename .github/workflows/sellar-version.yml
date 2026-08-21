@@ -55,7 +55,15 @@ jobs:
         env:
           VERSION: ${{ steps.version.outputs.valor }}
         run: |
-          sed -i -E "s|^\*\*Versión.*\*\*$|**Versión ${VERSION}**|" textos/*.md
+          # Se sella solo la PRIMERA línea que case en cada fichero. Es
+          # imprescindible para el README, que más abajo incluye una línea
+          # idéntica dentro de un bloque de código, a modo de ejemplo.
+          for f in textos/*.md README.md; do
+            awk -v v="$VERSION" '
+              !hecho && /^\*\*Versión.*\*\*$/ { print "**Versión " v "**"; hecho = 1; next }
+              { print }
+            ' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+          done
           git diff --stat
 
       - name: Publicar el resultado en main

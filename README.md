@@ -40,6 +40,10 @@ con el identificador real de esa versión, calculado con `git describe --tags --
 | Hay 2 commits después de la etiqueta | `**Versión v3.0-2-g143bf6a**` |
 | Todavía no hay ninguna etiqueta | `**Versión 7fd6bdc**` |
 
+Se sellan todos los documentos de [`textos/`](textos/) y también este README. En cada
+fichero se reescribe **únicamente la primera línea que tenga esa forma**, de modo que el
+ejemplo del bloque de código de aquí arriba no se ve afectado.
+
 Ese identificador es lo que hace verificable cada documento: a partir de él se recupera el
 texto exacto que se publicó y su fecha y hora (ver [Consultar una versión concreta](#consultar-una-versión-concreta)).
 
@@ -127,7 +131,7 @@ concreto y devolverá lo mismo dentro de diez años, pase lo que pase en el repo
 
 Git no guarda «los cambios» de cada commit, sino una **copia completa del repositorio** en
 cada uno. Por eso las tres formas funcionan **aunque ese commit no tocara ese documento en
-concreto**: el robot sella los ocho documentos con el mismo identificador en cada `push`, y
+concreto**: el robot sella todos los documentos con el mismo identificador en cada `push`, y
 cualquiera de ellos se recupera desde cualquier commit.
 
 Ejemplo real: el commit `e6d64ab` solo modificó `textos/subencargados.md`, y aun así
