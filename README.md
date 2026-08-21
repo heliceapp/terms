@@ -43,11 +43,6 @@ con el identificador real de esa versión, en el formato **etiqueta publicada + 
 tienen una función distinta: la etiqueta es la **versión publicada** a efectos de la
 cláusula 3.4, y el commit identifica **el texto exacto** dentro de esa versión.
 
-Se descarta a propósito el formato `v3.0-2-g143bf6a` que produce `git describe` por
-defecto: mete un contador de commits, y su prefijo `g` —que significa «git» y no forma
-parte del hash— se confunde con el identificador del commit. Es jerga de programador,
-ilegible en un documento legal.
-
 Se sellan todos los documentos de [`textos/`](textos/) y también este README. En cada
 fichero se reescribe **únicamente la primera línea que tenga esa forma**, de modo que el
 ejemplo del bloque de código de aquí arriba no se ve afectado.
@@ -65,7 +60,7 @@ Cada versión publicada se marca con una **etiqueta de Git** con su fecha, y se 
 junto al commit con `--follow-tags`:
 
 ```
-git tag -a v3.0 -m "Versión publicada el 5 de agosto de 2026"
+git tag -a v3.0 -m "Versión 3.0 publicada"
 git push --follow-tags
 ```
 
