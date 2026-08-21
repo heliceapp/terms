@@ -1,5 +1,5 @@
 # INFORMACIÓN PARA LICITACIONES Y PLIEGOS
-**Versión 1.0-1-g2f53ffd**
+**Versión 1.0-3-ge2ad81d**
 
 ## 1. Datos de la entidad
 

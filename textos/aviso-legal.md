@@ -1,5 +1,5 @@
 # AVISO LEGAL DE HELICE.APP
-**Versión 1.0-1-g2f53ffd**
+**Versión 1.0-3-ge2ad81d**
 
 ## 1. Identificación del prestador (art. 10 LSSI-CE)
 
