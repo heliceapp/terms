@@ -1,5 +1,5 @@
 # POLÍTICA DE PRIVACIDAD DE HELICE.APP
-**Versión 1.0-5-gda95291**
+**Versión v1.0-2-g4c21e27**
 
 ## 0. Quién es el responsable de esta política
 

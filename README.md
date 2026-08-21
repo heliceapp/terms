@@ -1,5 +1,5 @@
 # Documentos legales de Helice.app
-**Versión 1.0-5-gda95291**
+**Versión v1.0-2-g4c21e27**
 
 Textos legales **publicables** de Helice.app, servicio de GOOVERIS SOFTWARE S.L.
 
