@@ -1,5 +1,5 @@
 # MEDIDAS DE SEGURIDAD DE HELICE.APP
-**Versión v1.0-1cba831**
+**Versión v1.0-039182f**
 
 Este documento describe las **medidas técnicas y organizativas** que Helice.app aplica para garantizar un nivel de seguridad adecuado al riesgo, conforme al **artículo 32 del RGPD**. Forma parte del [Acuerdo de Encargo de Tratamiento (DPA)](/terminos-de-uso#dpa) de los [Términos y Condiciones](/terminos-de-uso). Las medidas se revisan y actualizan periódicamente, sin reducir el nivel de seguridad ofrecido.
 
