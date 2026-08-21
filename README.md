@@ -32,13 +32,21 @@ En este repositorio, la segunda línea de cada documento se escribe así:
 
 No hay que rellenarla a mano. Tras cada `push` a `main`, el workflow
 [`.github/workflows/sellar-version.yml`](.github/workflows/sellar-version.yml) la reescribe
-con el identificador real de esa versión, calculado con `git describe --tags --always`:
+con el identificador real de esa versión, en el formato **etiqueta publicada + commit exacto**:
 
 | Estado del repositorio | Queda escrito en el documento |
 |---|---|
-| El commit está etiquetado | `**Versión v3.0**` |
-| Hay 2 commits después de la etiqueta | `**Versión v3.0-2-g143bf6a**` |
-| Todavía no hay ninguna etiqueta | `**Versión 7fd6bdc**` |
+| Hay una etiqueta publicada | `**Versión v3.0-4c21e27**` |
+| Todavía no hay ninguna etiqueta | `**Versión 4c21e27**` |
+
+`v3.0-4c21e27` se lee como «la versión v3.0, en su commit `4c21e27`». Las dos mitades
+tienen una función distinta: la etiqueta es la **versión publicada** a efectos de la
+cláusula 3.4, y el commit identifica **el texto exacto** dentro de esa versión.
+
+Se descarta a propósito el formato `v3.0-2-g143bf6a` que produce `git describe` por
+defecto: mete un contador de commits, y su prefijo `g` —que significa «git» y no forma
+parte del hash— se confunde con el identificador del commit. Es jerga de programador,
+ilegible en un documento legal.
 
 Se sellan todos los documentos de [`textos/`](textos/) y también este README. En cada
 fichero se reescribe **únicamente la primera línea que tenga esa forma**, de modo que el
@@ -62,13 +70,13 @@ git push --follow-tags
 ```
 
 Subir la etiqueta **a la vez** que el commit hace que el workflow la vea a la primera y
-deje los documentos sellados como `**Versión v3.0**` con un solo commit. Si se sube después,
-por separado, el workflow se ejecuta dos veces y deja dos commits: uno con el hash y otro
-con la etiqueta.
+deje los documentos sellados como `**Versión v3.0-4c21e27**` con un solo commit. Si se sube
+después, por separado, el workflow se ejecuta dos veces y deja dos commits: en el primero
+el documento aún lleva la etiqueta anterior, y en el segundo ya la nueva.
 
 También se puede etiquetar un commit ya subido —incluido uno de sellado— y subir después
 solo la etiqueta con `git push origin v3.0`: ese push dispara el workflow por su cuenta y
-vuelve a sellar los documentos, ahora con `v3.0`.
+vuelve a sellar los documentos, ahora con `v3.0-…`.
 
 > **Cuidado con `[skip ci]`.** GitHub salta este workflow en cuanto encuentra esa marca en
 > el mensaje del commit, y también al etiquetar un commit que la lleve. No debe usarse en
@@ -77,8 +85,9 @@ vuelve a sellar los documentos, ahora con `v3.0`.
 
 Solo se etiqueta cuando **cambia el fondo** de un documento, no en cada corrección: si el
 número de versión cambiase en cada push dejaría de identificar nada, y la cláusula 3.4 se
-apoya en que sea estable. Entre etiqueta y etiqueta, los documentos muestran
-`v3.0-2-g143bf6a`, que se lee como «la v3.0 más dos retoques».
+apoya en que sea estable. Entre etiqueta y etiqueta, los documentos siguen mostrando
+`v3.0-…` con el commit correspondiente a cada corrección: la versión publicada no cambia,
+el texto exacto sí queda identificado.
 
 A partir de ahí:
 
@@ -91,26 +100,30 @@ A partir de ahí:
 
 ## Consultar una versión concreta
 
-Partiendo del identificador que aparece en el documento —`7fd6bdc`, `v3.0`, o
-`v3.0-2-g143bf6a`— hay tres formas de recuperar el texto exacto que se publicó bajo él.
-En los ejemplos se usa el hash `7fd6bdc`; sirve igual una etiqueta (`v3.0`).
+El identificador que aparece en el documento —por ejemplo `v3.0-4c21e27`— se usa **por su
+mitad derecha**: `4c21e27` es el commit, y es lo que entienden Git y GitHub. La mitad
+izquierda, `v3.0`, es la etiqueta de la versión publicada y sirve igual como referencia,
+pero apunta al conjunto, no a ese texto concreto.
+
+Con ese commit hay tres formas de recuperar el documento exacto. En los ejemplos se usa
+`4c21e27`; funciona igual con una etiqueta (`v3.0`).
 
 ### 1. Desde la terminal
 
 ```
-git show 7fd6bdc:textos/aviso-legal.md
+git show 4c21e27:textos/aviso-legal.md
 ```
 
 Devuelve el documento íntegro tal como estaba en ese commit. Para guardarlo en un fichero:
 
 ```
-git show 7fd6bdc:textos/aviso-legal.md > aviso-legal-7fd6bdc.md
+git show 4c21e27:textos/aviso-legal.md > aviso-legal-4c21e27.md
 ```
 
 Y para saber la fecha y hora exactas de esa versión:
 
 ```
-git show -s --format=%ci 7fd6bdc
+git show -s --format=%ci 4c21e27
 ```
 
 ### 2. En la web de GitHub
@@ -118,7 +131,7 @@ git show -s --format=%ci 7fd6bdc
 Sustituyendo `main` por el identificador en la URL de siempre:
 
 ```
-https://github.com/heliceapp/terms/blob/7fd6bdc/textos/aviso-legal.md
+https://github.com/heliceapp/terms/blob/4c21e27/textos/aviso-legal.md
 ```
 
 Es la forma cómoda de leerlo, ya formateado, sin salir del navegador.
@@ -128,7 +141,7 @@ Es la forma cómoda de leerlo, ya formateado, sin salir del navegador.
 La misma sustitución sobre la URL del raw:
 
 ```
-https://raw.githubusercontent.com/heliceapp/terms/7fd6bdc/textos/aviso-legal.md
+https://raw.githubusercontent.com/heliceapp/terms/4c21e27/textos/aviso-legal.md
 ```
 
 **Este es el enlace que se entrega a un cliente** que pregunta qué aceptó exactamente, y el

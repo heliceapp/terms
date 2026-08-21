@@ -49,7 +49,22 @@ jobs:
         id: version
         env:
           SHA: ${{ github.sha }}
-        run: echo "valor=$(git describe --tags --always "$SHA")" >> "$GITHUB_OUTPUT"
+        run: |
+          # Formato: «v1.0-4c21e27» = etiqueta publicada + commit exacto.
+          # Antes de la primera etiqueta, solo el commit: «4c21e27».
+          #
+          # No se usa «git describe» a secas porque produce «v1.0-2-g4c21e27»:
+          # mete un contador de commits y un prefijo «g» (de «git») que no forma
+          # parte del hash y se confunde con él. Ilegible en un documento legal.
+          ETIQUETA=$(git describe --tags --abbrev=0 "$SHA" 2>/dev/null || true)
+          COMMIT=$(git rev-parse --short=7 "$SHA")
+          if [ -n "$ETIQUETA" ]; then
+            VERSION="${ETIQUETA}-${COMMIT}"
+          else
+            VERSION="${COMMIT}"
+          fi
+          echo "valor=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Identificador: $VERSION"
 
       - name: Escribirlo en los documentos
         env:
