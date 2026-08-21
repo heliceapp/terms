@@ -1,5 +1,5 @@
 # POLÍTICA DE USO RAZONABLE DE HELICE.APP
-**Versión {{version}}**
+**Versión dcb6d1d**
 
 Esta política desarrolla la cláusula 11 (*Uso razonable del Proyecto*) de los [Términos y Condiciones Generales de Helice.app](https://www.helice.app/terminos-de-uso) y detalla las medidas técnicas vigentes dirigidas a garantizar el uso conforme de las Licencias.
 

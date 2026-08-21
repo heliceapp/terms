@@ -2,7 +2,7 @@
 
 **Helice.app — plataforma de gestión integral de eventos**
 GOOVERIS SOFTWARE, S.L. · CIF B56077100
-**Versión {{version}}**
+**Versión dcb6d1d**
 
 Este dossier responde a los requisitos de seguridad, protección de datos e infraestructura que habitualmente se solicitan en procesos de licitación, homologación de proveedores y evaluaciones de riesgo. Todo lo que aquí se describe se refiere al **servicio concreto que se contrata** —la plataforma Helice.app y los proyectos alojados en ella—, no a políticas genéricas de la organización.
 
