@@ -29,8 +29,8 @@ concurrency:
 
 jobs:
   sellar:
-    # El commit del bot lleva «[skip ci]», que GitHub respeta y no vuelve a
-    # disparar este workflow. Esta condición es el cinturón de seguridad.
+    # Cinturón de seguridad contra bucles, además de la protección que ya da
+    # GitHub al no disparar workflows en los pushes hechos con GITHUB_TOKEN.
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
 
@@ -77,5 +77,10 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add textos README.md
-          git commit -m "Sellar los textos con la versión ${VERSION} [skip ci]"
+          # Sin «[skip ci]» a propósito. No hace falta para evitar el bucle: los
+          # pushes hechos con GITHUB_TOKEN no disparan workflows, por diseño de
+          # GitHub. Y si se pusiera, etiquetar uno de estos commits de sellado
+          # no dispararía nada, porque GitHub salta el workflow al leer esa
+          # marca en el mensaje del commit apuntado por la etiqueta.
+          git commit -m "Sellar los textos con la versión ${VERSION}"
           git push origin main
