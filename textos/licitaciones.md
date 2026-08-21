@@ -1,5 +1,5 @@
 # INFORMACIÓN PARA LICITACIONES Y PLIEGOS
-**Versión 1.0 · 19 de agosto de 2026**
+**Versión {{version}}**
 
 ## 1. Datos de la entidad
 

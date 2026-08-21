@@ -1,5 +1,5 @@
 # POLÍTICA DE PRIVACIDAD DE HELICE.APP
-**Versión 1.0 · 19 de agosto de 2026**
+**Versión {{version}}**
 
 ## 0. Quién es el responsable de esta política
 

@@ -1,5 +1,5 @@
 # TÉRMINOS Y CONDICIONES GENERALES DE HELICE.APP
-**Versión 1.0 · 19 de agosto de 2026**
+**Versión {{version}}**
 
 ## Índice
 

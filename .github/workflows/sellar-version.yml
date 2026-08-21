@@ -1,0 +1,67 @@
+name: Sellar versión
+
+# Tras cada push a main, reescribe la línea «**Versión ...**» de cada documento
+# de textos/ con el identificador real de esta versión del repositorio:
+#
+#   · si el commit está etiquetado          ->  **Versión v1.0**
+#   · si hay commits después de la etiqueta ->  **Versión v1.0-2-g143bf6a**
+#   · si todavía no hay ninguna etiqueta    ->  **Versión 7fd6bdc**
+#
+# El resultado se commitea en main, de modo que el raw de GitHub
+# (raw.githubusercontent.com/heliceapp/terms/main/textos/*.md) sirve siempre
+# el documento ya sellado, en su ruta de siempre.
+#
+# Requisito de configuración, una sola vez:
+#   Settings -> Actions -> General -> Workflow permissions
+#   -> «Read and write permissions»
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sellar-version
+  cancel-in-progress: false
+
+jobs:
+  sellar:
+    # El commit del bot lleva «[skip ci]», que GitHub respeta y no vuelve a
+    # disparar este workflow. Esta condición es el cinturón de seguridad.
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar el repositorio (con todo el historial y las etiquetas)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Calcular el identificador de versión
+        id: version
+        run: echo "valor=$(git describe --tags --always)" >> "$GITHUB_OUTPUT"
+
+      - name: Escribirlo en los documentos
+        env:
+          VERSION: ${{ steps.version.outputs.valor }}
+        run: |
+          sed -i -E "s|^\*\*Versión.*\*\*$|**Versión ${VERSION}**|" textos/*.md
+          git diff --stat
+
+      - name: Publicar el resultado en main
+        env:
+          VERSION: ${{ steps.version.outputs.valor }}
+        run: |
+          if git diff --quiet; then
+            echo "Los documentos ya estaban sellados con ${VERSION}: no hay nada que hacer."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add textos
+          git commit -m "Sellar los textos con la versión ${VERSION} [skip ci]"
+          git push origin main

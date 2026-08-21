@@ -1,5 +1,5 @@
 # POLÍTICA DE COOKIES DE HELICE.APP
-**Versión 1.0 · 19 de agosto de 2026**
+**Versión {{version}}**
 
 ## 1. Qué son las cookies
 
