@@ -1,5 +1,5 @@
 # POLÍTICA DE COOKIES DE HELICE.APP
-**Versión 1.0-3-ge2ad81d**
+**Versión 1.0-5-gda95291**
 
 ## 1. Qué son las cookies
 
