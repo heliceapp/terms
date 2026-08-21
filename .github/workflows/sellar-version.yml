@@ -41,9 +41,15 @@ jobs:
           ref: main
           fetch-depth: 0
 
+      # Se calcula sobre el commit que disparó el evento (github.sha), que es
+      # siempre uno tuyo, y NO sobre la punta de main, que puede llevar encima
+      # commits de sellado anteriores. Si se usara la punta, al publicar una
+      # etiqueta el resultado sería «v3.0-1-g5deaf21» en vez de «v3.0».
       - name: Calcular el identificador de versión
         id: version
-        run: echo "valor=$(git describe --tags --always)" >> "$GITHUB_OUTPUT"
+        env:
+          SHA: ${{ github.sha }}
+        run: echo "valor=$(git describe --tags --always "$SHA")" >> "$GITHUB_OUTPUT"
 
       - name: Escribirlo en los documentos
         env:
