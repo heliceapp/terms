@@ -1,5 +1,5 @@
 # TÉRMINOS Y CONDICIONES GENERALES DE HELICE.APP
-**Versión dcb6d1d**
+**Versión 1237b98**
 
 ## Índice
 
