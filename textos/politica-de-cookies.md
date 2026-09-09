@@ -61,7 +61,3 @@ Podemos actualizar esta política cuando cambien las cookies utilizadas o la nor
 
 Para cualquier duda sobre esta política: **info@helice.app**.
 
----
-
-## Notas de cierre (no publicables)
-

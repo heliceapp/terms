@@ -59,7 +59,3 @@ Gooveris podrá modificar este aviso legal para adaptarlo a novedades legales, t
 
 Para cualquier cuestión relacionada con este aviso legal: **info@helice.app**.
 
----
-
-## Notas de cierre (no publicables)
-

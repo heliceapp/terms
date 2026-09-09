@@ -90,7 +90,3 @@ Podemos actualizar esta política para adaptarla a novedades legales, técnicas 
 
 Para cualquier duda sobre esta política o sobre el tratamiento de tus datos: **info@helice.app**.
 
----
-
-## Notas de cierre (no publicables)
-
