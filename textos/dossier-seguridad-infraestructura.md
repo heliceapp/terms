@@ -1,5 +1,5 @@
 # Dossier de seguridad, protección de datos e infraestructura
-**Versión v1.0-039182f**
+**Versión v1.0-54e2350**
 
 **Helice.app — plataforma de gestión integral de eventos**
 GOOVERIS SOFTWARE, S.L. · CIF B56077100
