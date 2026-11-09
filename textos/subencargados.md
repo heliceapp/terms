@@ -1,5 +1,5 @@
 # LISTA DE SUBENCARGADOS DE HELICE.APP
-**Versión v1.0-412ecc8**
+**Versión v1.0-ddd5a86**
 
 Conforme a la cláusula D8 del [Acuerdo de Encargo de Tratamiento](/terminos-de-uso#dpa), integrado en los Términos y Condiciones Generales de Helice.app, el Cliente autoriza de forma general el recurso de Gooveris a los siguientes subencargados para la prestación del servicio. Gooveris impone a cada uno de ellos, por contrato, obligaciones equivalentes a las de dicho acuerdo, y responde plenamente ante el Cliente de su cumplimiento (art. 28.4 RGPD).
 
