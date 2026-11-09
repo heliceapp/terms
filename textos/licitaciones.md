@@ -35,7 +35,7 @@ La contratación es por **licencia anual y por evento**, con precios públicos c
 
 Los Proyectos de un mismo cliente residen en un servidor concreto de la plataforma. Este reparto aporta **contención**: una incidencia en un servidor no afecta a los Proyectos alojados en los demás.
 
-**Servicios auxiliares fuera del EEE.** El único tratamiento fuera del Espacio Económico Europeo es el de la funcionalidad de inteligencia artificial **ValerIA**, cuyas peticiones se procesan a través de un proveedor establecido en Estados Unidos, amparado en las Cláusulas Contractuales Tipo. Es una funcionalidad de activación voluntaria: si el Cliente no la utiliza, no se produce ninguna transferencia internacional. El alojamiento, el envío de correo transaccional y las copias de seguridad se realizan íntegramente dentro del EEE. Todo ello se detalla en la [lista de subencargados](/subencargados).
+**Servicios auxiliares fuera del EEE.** El único tratamiento fuera del Espacio Económico Europeo es el de la funcionalidad de inteligencia artificial **Helice IA**, cuyas peticiones se procesan a través de un proveedor establecido en Estados Unidos, amparado en las Cláusulas Contractuales Tipo. Es una funcionalidad de activación voluntaria: si el Cliente no la utiliza, no se produce ninguna transferencia internacional. El alojamiento, el envío de correo transaccional y las copias de seguridad se realizan íntegramente dentro del EEE. Todo ello se detalla en la [lista de subencargados](/subencargados).
 
 ## 4. Stack tecnológico
 

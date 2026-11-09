@@ -4,7 +4,7 @@
 ## Índice
 
 - **Parte I — Disposiciones generales:** 1. Identificación · 2. Objeto y estructura · 3. Aceptación · 4. Definiciones
-- **Parte II — La Plataforma:** 5. Descripción del servicio · 6. Funcionalidades · 6 bis. ValerIA (inteligencia artificial) · 7. Cuentas y usuarios · 8. Reglas de uso · 9. Disponibilidad
+- **Parte II — La Plataforma:** 5. Descripción del servicio · 6. Funcionalidades · 6 bis. Helice IA (inteligencia artificial) · 7. Cuentas y usuarios · 8. Reglas de uso · 9. Disponibilidad
 - **Parte III — Licencias y uso razonable:** 10. Modalidades de Licencia · 11. Uso razonable del Proyecto · 12. Vigencia, renovación y ciclo de vida · 12 bis. El Proyecto en borrador y la prueba gratuita · 13. Incumplimiento del uso razonable
 - **Parte IV — Servicios adicionales:** 14. Disposiciones comunes · 15. Configuración inicial · 16. Formación y consultoría · 17. Programación a medida · 18. Dominios y correo electrónico · 19. Asistencia presencial y bolsas de horas · 20. Acuerdos especiales · 21. Servicios futuros
 - **Parte V — Contratación y condiciones económicas:** 22. Procedimiento de contratación · 23. Precios e impuestos · 24. Pago y facturación · 25. Desistimiento y reembolsos
@@ -87,15 +87,15 @@ La Plataforma puede utilizarse igualmente para gestionar **otras actividades o p
 
 **6.2.** GOOVERIS podrá evolucionar, sustituir o retirar funcionalidades por razones válidas — adaptación legal o de seguridad, evolución técnica o del producto, corrección de errores —, sin coste adicional para el Cliente y siempre que no se vea afectado sustancialmente el equilibrio contractual ni las prestaciones esenciales contratadas. Si una modificación afectara negativamente de forma no insignificante al acceso o uso del servicio por un Cliente consumidor, se le informará con antelación razonable por correo electrónico y podrá resolver el contrato sin coste en los treinta (30) días naturales siguientes, con reembolso proporcional del periodo no disfrutado (arts. 126 y 126 bis TRLGDCU).
 
-### 6 bis. ValerIA (funcionalidad de inteligencia artificial)
+### 6 bis. Helice IA (funcionalidad de inteligencia artificial)
 
-**6 bis.1. Naturaleza del servicio.** ValerIA es una funcionalidad de inteligencia artificial integrada en el panel de la Plataforma que asiste al Cliente en tareas de redacción y análisis a partir de instrucciones de texto; no admite imágenes ni archivos como entrada. Las acciones disponibles se determinan por GOOVERIS y se muestran en el propio panel; a la fecha de estas condiciones comprenden, entre otras, la redacción de respuestas a tickets de soporte, la redacción de correos electrónicos y la generación de informes de módulo.
+**6 bis.1. Naturaleza del servicio.** Helice IA es una funcionalidad de inteligencia artificial integrada en el panel de la Plataforma que asiste al Cliente en tareas de redacción, diseño y análisis a partir de instrucciones de texto y, en las acciones que lo indican, de una imagen: la que aporta el propio Cliente como referencia o la captura del diseño que está editando. No admite otro tipo de archivos como entrada. Las acciones disponibles se determinan por GOOVERIS y se muestran en el propio panel; a la fecha de estas condiciones comprenden, entre otras, la redacción de respuestas a tickets de soporte, la redacción de correos electrónicos, la generación de informes de módulo y la generación de diseños en el editor.
 
-**6 bis.2. Estado beta.** ValerIA se presta en fase beta, sin compromiso de fecha de finalización. GOOVERIS no garantiza su disponibilidad continuada; las acciones disponibles y el modelo de créditos de esta cláusula pueden modificarse, lo que se anunciará al Cliente con antelación razonable antes de su aplicación.
+**6 bis.2. Estado beta.** Helice IA se presta en fase beta, sin compromiso de fecha de finalización. GOOVERIS no garantiza su disponibilidad continuada; las acciones disponibles y el modelo de créditos de esta cláusula pueden modificarse, lo que se anunciará al Cliente con antelación razonable antes de su aplicación.
 
-**6 bis.3. Exclusión de garantías sobre el resultado.** El contenido que genera ValerIA procede de un modelo de lenguaje y no constituye una prestación de resultado determinado: puede ser inexacto, incompleto o inadecuado para el fin perseguido por el Cliente. Corresponde al Cliente revisarlo antes de utilizarlo y decidir sobre su envío o publicación; el Cliente es el único responsable del uso que haga del contenido generado por ValerIA, en los mismos términos que el resto de contenidos gestionados desde sus Proyectos (cláusula 8.2).
+**6 bis.3. Exclusión de garantías sobre el resultado.** El contenido que genera Helice IA procede de un modelo de lenguaje y no constituye una prestación de resultado determinado: puede ser inexacto, incompleto o inadecuado para el fin perseguido por el Cliente. Corresponde al Cliente revisarlo antes de utilizarlo y decidir sobre su envío o publicación; el Cliente es el único responsable del uso que haga del contenido generado por Helice IA, en los mismos términos que el resto de contenidos gestionados desde sus Proyectos (cláusula 8.2).
 
-**6 bis.4. Créditos.** El uso de ValerIA se mide en créditos, conforme a las siguientes reglas:
+**6 bis.4. Créditos.** El uso de Helice IA se mide en créditos, conforme a las siguientes reglas:
 
 a) Cada Proyecto —incluido el Proyecto en borrador de la cláusula 12 bis— recibe quinientos (500) créditos sin coste adicional al crearse.
 b) Los créditos no caducan: no están sujetos a periodo de consumo ni se reponen de forma periódica.
@@ -104,9 +104,9 @@ d) El saldo de créditos pertenece al Proyecto, no al Cliente ni a sus usuarios,
 e) La expiración de la Licencia del Proyecto no afecta a su saldo de créditos, que se conserva; la activación o renovación de la Licencia no genera créditos adicionales a los concedidos conforme a la letra a).
 f) La eliminación del Proyecto conlleva la pérdida de su saldo de créditos.
 
-**6 bis.5. Uso aceptable.** Las reglas de uso de la cláusula 8 se aplican también a las instrucciones dirigidas a ValerIA y a los contenidos que genere: en particular, no puede utilizarse para obtener contenido ilícito, que infrinja derechos de terceros o que vulnere el resto de reglas de dicha cláusula.
+**6 bis.5. Uso aceptable.** Las reglas de uso de la cláusula 8 se aplican también a las instrucciones dirigidas a Helice IA y a los contenidos que genere: en particular, no puede utilizarse para obtener contenido ilícito, que infrinja derechos de terceros o que vulnere el resto de reglas de dicha cláusula.
 
-**6 bis.6. Protección de datos.** ValerIA funciona sobre un proveedor externo de modelos de lenguaje. La información que se le envía no incluye datos identificativos de los interesados: las consultas de soporte se envían sin identificar al usuario, los informes de módulo se generan excluyendo los datos personales de las inscripciones sobre las que versan, y la redacción de correos se limita a generar su contenido, sin que ValerIA los remita a sus destinatarios. El tratamiento de los datos personales que el Cliente gestione a través de la Plataforma se rige, en todo caso, por el Acuerdo de Encargo de Tratamiento de la Parte VIII.
+**6 bis.6. Protección de datos.** Helice IA funciona sobre un proveedor externo de modelos de lenguaje. La información que se le envía no incluye datos identificativos de los interesados: las consultas de soporte se envían sin identificar al usuario, los informes de módulo se generan excluyendo los datos personales de las inscripciones sobre las que versan, y la redacción de correos se limita a generar su contenido, sin que Helice IA los remita a sus destinatarios. El tratamiento de los datos personales que el Cliente gestione a través de la Plataforma se rige, en todo caso, por el Acuerdo de Encargo de Tratamiento de la Parte VIII.
 
 ### 7. Cuentas y usuarios
 
@@ -176,7 +176,7 @@ d) La modificación de la denominación, el dominio o la marca del Proyecto que 
 
 **12 bis.1. Concepto.** El Cliente puede crear en la Plataforma tantos Proyectos sin Licencia activa como desee (el «Proyecto en borrador»), forma habitual de iniciar un Proyecto antes de contratar su Licencia. El Proyecto en borrador permite probar la generalidad de las funcionalidades de la Plataforma (cláusula 6), con las limitaciones de esta cláusula.
 
-**12 bis.2. Limitaciones.** El Proyecto en borrador: (a) no puede publicarse — su sitio web y, en su caso, su aplicación móvil no son accesibles públicamente —, por lo que sirve para probar la Plataforma, no para operar un evento real frente a asistentes; (b) queda limitado a veinticinco (25) usuarios y doscientos cincuenta (250) MB de almacenamiento; (c) recibe los créditos de ValerIA de la cláusula 6 bis.4.a) en los mismos términos que cualquier Proyecto.
+**12 bis.2. Limitaciones.** El Proyecto en borrador: (a) no puede publicarse — su sitio web y, en su caso, su aplicación móvil no son accesibles públicamente —, por lo que sirve para probar la Plataforma, no para operar un evento real frente a asistentes; (b) queda limitado a veinticinco (25) usuarios y doscientos cincuenta (250) MB de almacenamiento; (c) recibe los créditos de Helice IA de la cláusula 6 bis.4.a) en los mismos términos que cualquier Proyecto.
 
 **12 bis.3. Activación.** El Cliente puede convertir en cualquier momento un Proyecto en borrador en un Proyecto con Licencia activa contratando la Modalidad correspondiente (cláusula 10), conservando en su integridad la configuración, los contenidos y el trabajo realizado durante el borrador.
 
@@ -248,7 +248,7 @@ GOOVERIS podrá incorporar nuevos servicios (por ejemplo, servicios gestionados 
 
 ### 22. Procedimiento de contratación
 
-**22.1. Ámbito.** Este procedimiento de contratación online se aplica a las Licencias y a los demás productos contratables directamente desde la Plataforma o el sitio web (p. ej., los créditos de ValerIA de la cláusula 6 bis.4.c). Los servicios de la Parte IV —incluida la configuración inicial (cláusula 15.1)— **no se contratan por esta vía**: se rigen por el procedimiento de solicitud de presupuesto de la cláusula 14.1.
+**22.1. Ámbito.** Este procedimiento de contratación online se aplica a las Licencias y a los demás productos contratables directamente desde la Plataforma o el sitio web (p. ej., los créditos de Helice IA de la cláusula 6 bis.4.c). Los servicios de la Parte IV —incluida la configuración inicial (cláusula 15.1)— **no se contratan por esta vía**: se rigen por el procedimiento de solicitud de presupuesto de la cláusula 14.1.
 
 **22.2. Trámites.** La contratación online sigue estos pasos: selección del producto o servicio → introducción de los datos necesarios → revisión del resumen del pedido, donde pueden **identificarse y corregirse los errores** antes de confirmar → aceptación de estas condiciones (cláusula 3) → pago. El contrato se perfecciona con la confirmación del pago.
 
@@ -274,7 +274,7 @@ El pago se realiza mediante los **medios habilitados en el proceso de contrataci
 
 **25.4. Dominios.** El registro y la renovación de dominios se ejecutan de forma inmediata e íntegra en el momento de su tramitación, previa solicitud expresa del Cliente; ejecutado el servicio, no procede desistimiento ni reembolso de las tasas (art. 103.a TRLGDCU).
 
-**25.5. Créditos de ValerIA.** La compra de créditos de ValerIA (cláusula 6 bis.4) constituye el suministro de contenido digital no prestado en soporte material a los efectos de la cláusula 25.3: si el Cliente es consumidor y presta su consentimiento expreso con conocimiento de la pérdida de su derecho de desistimiento, este se extingue en cuanto comience el consumo del pack adquirido; mientras no se haya iniciado dicho consumo, es de aplicación el régimen general de esta cláusula 25.
+**25.5. Créditos de Helice IA.** La compra de créditos de Helice IA (cláusula 6 bis.4) constituye el suministro de contenido digital no prestado en soporte material a los efectos de la cláusula 25.3: si el Cliente es consumidor y presta su consentimiento expreso con conocimiento de la pérdida de su derecho de desistimiento, este se extingue en cuanto comience el consumo del pack adquirido; mientras no se haya iniciado dicho consumo, es de aplicación el régimen general de esta cláusula 25.
 
 ## PARTE VI — PROPIEDAD INTELECTUAL
 

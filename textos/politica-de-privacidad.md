@@ -78,7 +78,7 @@ Ese tratamiento se rige por el **Acuerdo de Encargo de Tratamiento (DPA)** integ
 
 Si eres un asistente, inscrito o participante de un evento gestionado con helice.app y quieres ejercer tus derechos sobre tus datos, debes dirigirte al **organizador de ese evento** (el responsable del tratamiento), no a Gooveris. Si no sabes cómo contactarle, escríbenos a info@helice.app y te ayudaremos a identificarlo.
 
-Cuando el Cliente utiliza **ValerIA**, la funcionalidad de inteligencia artificial integrada en el panel (cláusula 6 bis de los [Términos y Condiciones](/terminos-de-uso)), esta funciona sobre un proveedor externo de modelos de lenguaje. La información que se le envía no incluye datos identificativos de los interesados: las consultas de soporte se envían sin identificar al usuario, los informes de módulo se generan excluyendo los datos personales de las inscripciones sobre las que versan, y la redacción de correos se limita a generar su contenido, sin que ValerIA los remita a sus destinatarios.
+Cuando el Cliente utiliza **Helice IA**, la funcionalidad de inteligencia artificial integrada en el panel (cláusula 6 bis de los [Términos y Condiciones](/terminos-de-uso)), esta funciona sobre un proveedor externo de modelos de lenguaje. La información que se le envía no incluye datos identificativos de los interesados: las consultas de soporte se envían sin identificar al usuario, los informes de módulo se generan excluyendo los datos personales de las inscripciones sobre las que versan, y la redacción de correos se limita a generar su contenido, sin que Helice IA los remita a sus destinatarios.
 
 ---
 

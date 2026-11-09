@@ -59,7 +59,7 @@ La seguridad física del centro de datos —control de acceso, energía, climati
 
 **Aislamiento entre clientes.** La plataforma se despliega sobre **varios servidores independientes**, cada uno con su propia base de datos y su propio almacenamiento. Los proyectos de un cliente residen en un servidor concreto. Dentro de cada servidor, los datos de cada proyecto están separados lógicamente y el acceso está mediado por el sistema de permisos: un usuario solo alcanza los proyectos en los que ha sido dado de alta. Este reparto aporta contención: una incidencia en un servidor no afecta a los proyectos alojados en los demás.
 
-**Transferencias internacionales.** El alojamiento, el envío de correo transaccional y las copias de seguridad se realizan íntegramente dentro del Espacio Económico Europeo. El único tratamiento fuera del EEE es el de la funcionalidad de inteligencia artificial **ValerIA**, de activación voluntaria, amparado en las Cláusulas Contractuales Tipo (Decisión de Ejecución UE 2021/914). Si el cliente no utiliza esa funcionalidad, no se produce ninguna transferencia internacional.
+**Transferencias internacionales.** El alojamiento, el envío de correo transaccional y las copias de seguridad se realizan íntegramente dentro del Espacio Económico Europeo. El único tratamiento fuera del EEE es el de la funcionalidad de inteligencia artificial **Helice IA**, de activación voluntaria, amparado en las Cláusulas Contractuales Tipo (Decisión de Ejecución UE 2021/914). Si el cliente no utiliza esa funcionalidad, no se produce ninguna transferencia internacional.
 
 ### 3.1 Arquitectura técnica
 
@@ -104,7 +104,7 @@ Por política de seguridad, el número de versión exacto de cada componente no 
 |---|---|---|---|
 | **DigitalOcean** | Alojamiento de la plataforma y de los proyectos | Frankfurt, Alemania (EEE) | No aplica |
 | **Brevo** | Envío de correo transaccional por cuenta de los proyectos (confirmaciones, acreditaciones, recordatorios) | Francia (EEE) | No aplica |
-| **OpenRouter** | Procesamiento de las peticiones de la funcionalidad de IA (ValerIA), de activación voluntaria | Estados Unidos | Cláusulas Contractuales Tipo (UE 2021/914) |
+| **OpenRouter** | Procesamiento de las peticiones de la funcionalidad de IA (Helice IA), de activación voluntaria | Estados Unidos | Cláusulas Contractuales Tipo (UE 2021/914) |
 
 La lista está publicada y versionada en https://www.helice.app/subencargados. Cualquier alta o sustitución se notifica con **15 días naturales** de antelación, con derecho de oposición del cliente y, si esta no puede atenderse, resolución sin penalización y reembolso proporcional.
 
