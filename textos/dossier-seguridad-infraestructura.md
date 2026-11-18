@@ -17,7 +17,8 @@ Este dossier responde a los requisitos de seguridad, protección de datos e infr
 | **Ubicación de los datos** | Centro de datos de Frankfurt (Alemania), dentro del EEE. Copias replicadas en instalación propia en Córdoba (España) | [§3](#3-alojamiento-y-ubicación-de-los-datos) |
 | **DPA y RGPD** | Acuerdo de encargo de tratamiento **ya integrado** en los Términos y Condiciones, formalizado con su aceptación, sin firma adicional | [§4](#4-protección-de-datos) |
 | **Subprocesadores** | Lista pública y versionada, con notificación previa de 15 días ante cualquier alta o sustitución | [§5](#5-subencargados-subprocesadores) |
-| **SSO** | Sí: Google, Microsoft (Azure AD) y LinkedIn. El panel funciona **sin contraseñas**: OTP o SSO, sin credenciales almacenadas ni flujo de recuperación | [§6.2](#62-autenticación) |
+| **SSO** | Sí: Google, Microsoft (Azure AD) y LinkedIn. El panel funciona **sin contraseñas**: OTP o SSO, sin contraseñas almacenadas ni flujo de recuperación de contraseña | [§6.2](#62-autenticación) |
+| **Doble factor (2FA)** | Sí, **opcional por usuario** del panel: códigos TOTP con aplicación de autenticación y códigos de recuperación de un solo uso | [§6.2](#62-autenticación) |
 | **Roles y permisos** | Sistema por áreas funcionales y por proyecto, gestionado por el propio cliente, con criterio de mínimo privilegio | [§6.3](#63-roles-y-permisos) |
 | **Política de contraseñas** | Configurable por proyecto y validada en servidor: longitud, mayúsculas, números, caracteres especiales, dominios autorizados y sesión única | [§6.2](#62-autenticación) |
 | **Copias de seguridad** | Copia completa diaria de base de datos y semanal de ficheros, replicadas cifradas fuera del servidor de origen, con 30 días de retención | [§7](#7-copias-de-seguridad-y-continuidad) |
@@ -132,7 +133,8 @@ Los editores de diseño usan además bancos de imágenes (Unsplash, Pixabay, Gip
 ### 6.1 Cifrado
 
 - **En tránsito:** HTTPS con **TLS 1.2 y TLS 1.3** en todos los dominios (panel, webs de proyecto, apps y API); no se admiten versiones anteriores. Certificados Let's Encrypt con renovación automática y redirección de HTTP a HTTPS.
-- **Credenciales del panel: no existen.** El acceso del equipo organizador es por código de un solo uso (OTP) o SSO, de modo que **no se almacena ninguna contraseña** de los usuarios del panel: la base de datos no dispone siquiera de un campo donde guardarlas (ver §6.2).
+- **Contraseñas del panel: no existen.** El acceso del equipo organizador es por código de un solo uso (OTP) o SSO, de modo que **no se almacena ninguna contraseña** de los usuarios del panel: la base de datos no dispone siquiera de un campo donde guardarlas (ver §6.2).
+- **Verificación en dos pasos:** el secreto de cada usuario que la activa se almacena **cifrado con AES-256 mediante una clave propia**, independiente de la clave general de la aplicación y guardada fuera de la base de datos. Los códigos de recuperación se conservan solo como **hash bcrypt**.
 - **Credenciales de usuarios finales:** cuando un proyecto habilita el acceso con contraseña para sus inscritos, se almacena con **hash bcrypt** con sal. No se guarda en claro ni es recuperable, solo restablecible.
 - **Datos de pago:** **no se almacenan**. El pago se realiza en el entorno de la pasarela, certificado PCI DSS, que devuelve únicamente el resultado de la operación.
 - **En reposo:** el almacenamiento combina el disco de los propios servidores con volúmenes de bloque del proveedor, que aplica cifrado en reposo sobre estos últimos. Los soportes físicos y su ciclo de vida, incluida la destrucción segura al retirarlos, están bajo control del proveedor certificado.
@@ -143,6 +145,18 @@ El panel de gestión se basa en dos mecanismos, y **ninguno de ellos requiere qu
 
 1. **Código de un solo uso (OTP)** enviado al correo del usuario. Verifica en cada acceso la titularidad de la dirección, caduca por sí solo y no deja ningún secreto permanente almacenado.
 2. **Inicio de sesión corporativo (SSO)** con **Google, Microsoft (Azure AD) y LinkedIn**. La identidad la valida el proveedor corporativo del cliente, que aplica sus propias políticas de doble factor y dispositivos autorizados; dar de baja a una persona en ese directorio cierra automáticamente su acceso a Helice.app.
+
+**Verificación en dos pasos (2FA).** Cada usuario del panel puede añadir, de forma **opcional**, un segundo factor con **códigos temporales TOTP (RFC 6238)** generados por una aplicación de autenticación en su propio dispositivo:
+
+| Aspecto | Funcionamiento |
+|---|---|
+| Cuándo se exige | Después del código por correo y también después del SSO. **La sesión no se inicia hasta validar el segundo factor** |
+| Códigos | Cambian cada 30 segundos, no se envían por correo ni SMS y cada uno solo puede usarse una vez |
+| Intentos | Tras 5 fallos consecutivos, bloqueo de 15 minutos |
+| Recuperación | 10 códigos de un solo uso, conservados solo como hash bcrypt |
+| Desactivación y renovación | Requieren un código válido |
+| Pérdida del dispositivo y de los códigos | Un administrador de la organización puede retirarla desde la ficha del usuario; la plataforma le indica que confirme antes su identidad por una vía distinta del correo |
+| Alcance | Inicio de sesión en el panel. No se solicita de nuevo en sesiones ya abiertas ni al cambiar de organización desde una sesión iniciada, y no se aplica a Helice Checkin ni a las conexiones de asistentes de IA ya autorizadas |
 
 Para los **usuarios finales** (asistentes e inscritos), cada proyecto elige entre cuatro modos de identificación: código de un solo uso al correo, usuario y contraseña, un campo identificador del propio registro (número de colegiado, DNI, identificador corporativo) o **autenticación delegada** en un sistema del propio cliente a través de la API.
 
@@ -166,6 +180,7 @@ Para los **usuarios finales** (asistentes e inscritos), cada proyecto elige entr
 | Fuerza bruta y relleno de credenciales automatizado | **Sin objetivo**: no hay contraseña que adivinar |
 | Secuestro mediante el flujo de «he olvidado mi contraseña» | **No existe ese flujo**: no hay enlace de restablecimiento que interceptar |
 | Contraseñas débiles o compartidas dentro del equipo del cliente | **Irrelevante**: cada acceso exige el código del momento o la validación del proveedor de SSO |
+| Acceso de un tercero al correo del usuario | **Mitigable**: con la verificación en dos pasos activada, el código del correo no basta para entrar |
 
 ### 6.3 Roles y permisos
 

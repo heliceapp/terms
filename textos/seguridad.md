@@ -15,12 +15,14 @@ Además del entorno de producción, Gooveris mantiene una **instalación propia 
 
 **En tránsito.** Todo el tráfico de la plataforma —panel, webs de los Proyectos, aplicaciones móviles y API— viaja cifrado mediante **HTTPS con TLS 1.2 y TLS 1.3**; no se admiten versiones anteriores del protocolo. Los certificados se emiten con Let's Encrypt y se renuevan de forma automática antes de su expiración, y las peticiones que llegan por HTTP se redirigen a HTTPS.
 
-**Credenciales del equipo organizador: no existen.** El acceso al panel de gestión se realiza mediante código de un solo uso (OTP) o inicio de sesión corporativo (SSO), de modo que **Helice.app no almacena contraseñas de los usuarios del panel** — la base de datos ni siquiera dispone de un campo donde guardarlas. Esta decisión de diseño elimina de raíz varios de los vectores de ataque más frecuentes:
+**Contraseñas del equipo organizador: no existen.** El acceso al panel de gestión se realiza mediante código de un solo uso (OTP) o inicio de sesión corporativo (SSO), de modo que **Helice.app no almacena contraseñas de los usuarios del panel** — la base de datos ni siquiera dispone de un campo donde guardarlas. Esta decisión de diseño elimina de raíz varios de los vectores de ataque más frecuentes:
 
-- **No hay credenciales que robar.** Un acceso indebido a la base de datos no expone contraseñas, ni siquiera cifradas, por lo que no puede alimentar ataques de reutilización de credenciales contra otros servicios del usuario.
+- **No hay contraseñas que robar.** Un acceso indebido a la base de datos no expone contraseñas, ni siquiera cifradas, por lo que no puede alimentar ataques de reutilización de credenciales contra otros servicios del usuario.
 - **No hay fuerza bruta ni relleno de credenciales.** Sin contraseña que adivinar, los ataques automatizados de prueba masiva carecen de objetivo.
 - **No hay recuperación de contraseña**, que es uno de los mecanismos más explotados para el secuestro de cuentas: no existe enlace de restablecimiento que interceptar ni pregunta de seguridad que suplantar.
 - **Cada acceso verifica el canal**, porque el código se envía al correo corporativo del usuario o la identidad la confirma su proveedor de SSO.
+
+**Secretos de la verificación en dos pasos.** Cuando un usuario del panel activa este segundo factor (véase el apartado 3), su secreto se almacena **cifrado con AES-256 mediante una clave propia**, independiente de la clave general de la aplicación y guardada fuera de la base de datos. Sus códigos de recuperación se conservan únicamente como **hash bcrypt**, por lo que no pueden leerse ni recuperarse.
 
 **Credenciales de los usuarios finales.** Cuando un Proyecto habilita el acceso de sus inscritos con contraseña —además del acceso por código enviado al correo—, esta se almacena mediante **funciones de hash con sal (bcrypt)**, un procedimiento irreversible: no se guarda en claro ni puede recuperarse, solo restablecerse.
 
@@ -34,6 +36,16 @@ Además del entorno de producción, Gooveris mantiene una **instalación propia 
 
 - **Código de un solo uso (OTP)** enviado al correo del usuario. Verifica en cada acceso la titularidad de la dirección, caduca por sí solo y no deja ningún secreto permanente almacenado en la plataforma.
 - **Inicio de sesión corporativo (SSO)** con **Google, Microsoft (Azure AD) o LinkedIn**. La identidad la valida el proveedor corporativo de la organización, que aplica sus propias políticas —doble factor, dispositivos autorizados, expulsión inmediata al dar de baja a un empleado en el directorio—, de modo que la baja de una persona en el sistema del Cliente cierra también su acceso a Helice.app.
+
+**Verificación en dos pasos (2FA).** Cada usuario del panel puede añadir, de forma **opcional**, un segundo factor basado en **códigos temporales TOTP (RFC 6238)**, generados por una aplicación de autenticación en su propio dispositivo. Una vez activada:
+
+- Se exige después del código enviado al correo y también después del inicio de sesión corporativo (SSO). **La sesión no se inicia hasta validar el segundo factor.**
+- Los códigos cambian cada 30 segundos, no se envían por correo ni por SMS y **cada uno solo puede utilizarse una vez**.
+- Tras **5 intentos fallidos consecutivos**, la verificación se bloquea durante 15 minutos.
+- El usuario dispone de **10 códigos de recuperación de un solo uso**. Para desactivar la verificación o renovar esos códigos debe aportar un código válido.
+- Si pierde su dispositivo y sus códigos de recuperación, un administrador de su organización puede retirar la verificación desde la ficha del usuario. La plataforma le indica que confirme antes su identidad por una vía distinta del correo.
+
+Esta medida protege el **inicio de sesión en el panel**. No se solicita de nuevo en las sesiones ya abiertas ni al cambiar de organización desde una sesión iniciada, y no se aplica a Helice Checkin ni a las conexiones de asistentes de IA ya autorizadas, que cuentan con sus propios mecanismos de acceso.
 
 Los Proyectos deciden qué mecanismos ofrecen a sus propios usuarios finales, que además pueden acceder con contraseña propia si el Proyecto lo habilita.
 
