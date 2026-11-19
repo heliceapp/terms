@@ -33,7 +33,7 @@ Todos los contenidos del sitio web helice.app —incluyendo, a título enunciati
 
 Queda prohibida su reproducción, distribución, comunicación pública, transformación o cualquier otra forma de explotación, total o parcial, sin la autorización previa y por escrito de Gooveris o del titular correspondiente, salvo en los supuestos legalmente permitidos.
 
-La marca **Helice** y el logotipo asociado son titularidad de Gooveris. Su uso no autorizado queda expresamente prohibido.
+La marca **Helice** y el logotipo asociado son titularidad de Gooveris. Su uso no autorizado queda expresamente prohibido
 
 ## 5. Exención de responsabilidad
 
